@@ -157,7 +157,7 @@ public PersonValidator()
 
 
             RuleFor(x => x.Salary).NotEmpty().WithMessage("Salary cannot be empty")
-                 .Must((person, salary) => SalaryAccessLevel (person.AccessLevel, salary))
+                 .Must((x,salary) => SalaryAccessLevel (x.AccessLevel, salary))
                  .InclusiveBetween(5000, 50000).WithMessage("Salary should be between 5000 and 50000")
                  .WithName("staff person salary");
 
